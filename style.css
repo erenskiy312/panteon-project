@@ -22,10 +22,15 @@ navbar{
 .navbar-and-main{
     height: 243vh;
     background-image: url(img/background-image.svg);
-    background: 
-    rgba(0, 0, 0, 0.9) 0%
-    rgba(0, 0, 0, 0.1) 100%
-    rgba(0, 0, 0, 0.4) 100%
+    background-image: linear-gradient( to top, rgba(0, 0, 0, 0.9)
+    rgba(0, 0, 0, 0.1)  
+    rgba(0, 0, 0, 0.4));
+
+    background: linear-gradient(
+    190deg,rgba(0,0,0,0.9) 0%
+     0,rgba(0,0,0,0.1) 100%,
+     rgba(0,0,0,0.4) 100%),
+     url(./img/background-image.svg)
         
     
 }
@@ -321,6 +326,11 @@ section{
     font-size: 30px;
 }
 
+.subs-line-black,
+.subs-line-orange{
+    display: none;
+}
+
 .count-workouts{
     display: flex;
     justify-content: space-evenly;
@@ -330,9 +340,11 @@ section{
     padding: 7%;
 }
 
-.workouts-item{
+.workouts-item,
+.workouts-item-count{
     font-weight: 700;
 }
+
 
 .workouts-line{
     width: 76%;
@@ -387,8 +399,8 @@ section{
 
 .workouts-transparent-line-right{
     position: absolute;
-    margin-left: 90%;
-    margin-top: -27%;
+    margin-left: 91%;
+    margin-top: -28%;
     z-index: 1;
 }
 
@@ -399,8 +411,8 @@ section{
 }
 
 .workouts-orange-line-right{
-    margin-left: 96%;
-    margin-top: -12%;
+    margin-left: 97%;
+    margin-top: -13%;
     position: absolute;
 }
 
@@ -567,7 +579,7 @@ section{
 .coaches{
     background-color: #0C1417;
     height: 90vh;
-    padding-top: 6%;
+    padding-top: 3%;
 }
 
 .coaches-title{
@@ -617,18 +629,23 @@ section{
 .coaches-orange-line-left{
     position: absolute;
     /* margin-left: 5%; */
-    margin-top: -4%;
+    
 }
 
 .coaches-transparent-line-left{
     position: absolute;
-    margin-top: -6%;
+    margin-top: -2%;
 }
 
 .coaches-arrow-left{
     margin-top: 5%;
     margin-left: 47%;
     margin-right: 2%;
+}
+
+.coaches-line-white,
+.coaches-line-orange{
+    display: none;
 }
 
 /*! coaches block END  */
@@ -760,7 +777,7 @@ section{
 
 .contacts-vk-icon{
     margin-left: 18%;
-    margin-top: -16%;
+    margin-top: -17%;
 }
 
 
@@ -849,6 +866,236 @@ footer{
 
 
 /*! footer END */
+
+/* burger START  */
+/* #navbar-menu-toggle{
+opacity: 0;
+}
+
+.navbar-hamburger-menu{
+    display: flex;
+    text-align: center;
+}
+
+.navbar-menu-btn{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.navbar-menu-btn > span,
+.navbar-menu-btn > span::before,
+.navbar-menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #F7931E;
+}
+
+.navbar-menu-btn::before{
+    content: '';
+    top: -8px;
+}
+
+.navbar-menu-btn::after{
+    content: '';
+    top: 8px;
+}
+
+.navbar-menu-box-1,
+.navbar-menu-box-2 {
+
+    text-decoration: none;
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #0C1417;
+  } */
+  /* элементы меню */
+  /* .navbar-menu-item-1 > a,
+  .navbar-menu-item-2> a{
+    display: block;
+    padding: 12px 24px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .navbar-menu-item-1 > a:hover,
+  .navbar-menu-item-2 > a:hover{
+    color: #F7931E;
+    transition: 0.3s;
+  }
+
+  #navbar-menu-toggle:checked ~ .navbar-menu-btn > span {
+    transform: rotate(45deg);
+  }
+  #navbar-menu-toggle:checked ~ .navbar-menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #navbar-menu-toggle:checked ~ .navbar-menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #navbar-menu-toggle:checked ~ .navbar-menu-box-1,
+  .navbar-menu-box-2 {
+    visibility: visible;
+    left: 0;
+  }
+
+  .navbar-menu-btn > span,
+.navbar-menu-btn > span::before,
+.navbar-menu-btn > span::after {
+  transition-duration: .25s;
+}
+.navbar-menu-box-1,
+.navbar-menu-box-2 {
+  transition-duration: .25s;
+}
+.navbar-menu-item-1,
+.navbar-menu-item-2 {
+  transition-duration: .25s;
+} */
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    margin-left: 21%;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #FFF;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: black;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .menu__item:hover{
+    color: #F7931E;
+    transition: 0.5s;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+
+.menu__box{
+    height: 4%;
+    padding-top: 0%;
+    margin-top: 6%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.menu__box-second{
+    margin-top: 31%;
+    margin-left: -89%;
+}
+
+
+
+
+
+/*! burger END  */
 
 
 
